@@ -38,7 +38,7 @@ public static class AppConstants
     public const int ConnectionReconnectDelaySeconds = 4;
     public const int ChatRetryIntervalSeconds = 5;
     public const int ChatAutoRetryLimit = 5;
-    public const int TransferChunkSizeBytes = 16 * 1024 * 1024;
+    public const int TransferChunkSizeBytes = 1 * 1024 * 1024;
     public const int TransferRequestTimeoutSeconds = 120;
     public const int TransferRecoveryRetryLimit = 4;
     public const long TransferMaxFileSizeBytes = 20L * 1024 * 1024 * 1024;

@@ -41,7 +41,7 @@ object AppConstants {
     const val chatRetryIntervalSeconds = 5
     const val chatAutoRetryLimit = 5
     const val localHttpServerBacklog = 16
-    const val transferChunkSizeBytes = 16 * 1024 * 1024
+    const val transferChunkSizeBytes = 1 * 1024 * 1024
     const val transferRequestTimeoutMillis = 120_000
     const val transferRecoveryRetryLimit = 4
     const val transferIncomingSyncChunkInterval = 8

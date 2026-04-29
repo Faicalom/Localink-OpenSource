@@ -10,6 +10,7 @@ import java.net.InetSocketAddress
 import java.net.ServerSocket
 import java.net.Socket
 import java.net.SocketException
+import java.net.SocketTimeoutException
 import java.util.Locale
 import java.util.concurrent.ConcurrentHashMap
 import kotlinx.coroutines.CoroutineScope
@@ -134,37 +135,46 @@ class LocalHttpHostService(
     }
 
     private suspend fun handleClient(socket: Socket) {
-        socket.soTimeout = AppConstants.connectionRequestTimeoutMillis
+        socket.soTimeout = AppConstants.transferRequestTimeoutMillis
+        socket.tcpNoDelay = true
+        socket.keepAlive = true
         val input = BufferedInputStream(socket.getInputStream())
         val output = BufferedOutputStream(socket.getOutputStream())
 
-        val request = readHttpRequest(input)?.copy(
-            remoteAddress = socket.inetAddress?.hostAddress
-        )
-        if (request == null) {
-            writeResponse(
-                output,
-                LocalHttpResponse.text(400, "Bad Request", "Malformed HTTP request.")
-            )
-            return
-        }
-
-        val handler = handlers[handlerKey(request.method, request.path)]
-        val response = if (handler == null) {
-            LocalHttpResponse.text(404, "Not Found", "Endpoint not found.")
-        } else {
-            try {
-                handler.invoke(request)
-            } catch (exception: Exception) {
-                loggerService.error(
-                    "Android local HTTP host handler failed for ${request.method} ${request.path}: ${exception.message}",
-                    exception
+        while (scope.isActive) {
+            val request = try {
+                readHttpRequest(input)?.copy(
+                    remoteAddress = socket.inetAddress?.hostAddress
                 )
-                LocalHttpResponse.text(500, "Internal Server Error", "Endpoint handler failed.")
+            } catch (_: SocketTimeoutException) {
+                break
+            }
+
+            if (request == null) {
+                break
+            }
+
+            val handler = handlers[handlerKey(request.method, request.path)]
+            val response = if (handler == null) {
+                LocalHttpResponse.text(404, "Not Found", "Endpoint not found.")
+            } else {
+                try {
+                    handler.invoke(request)
+                } catch (exception: Exception) {
+                    loggerService.error(
+                        "Android local HTTP host handler failed for ${request.method} ${request.path}: ${exception.message}",
+                        exception
+                    )
+                    LocalHttpResponse.text(500, "Internal Server Error", "Endpoint handler failed.")
+                }
+            }
+
+            val keepAlive = !request.header("connection").equals("close", ignoreCase = true)
+            writeResponse(output, response, keepAlive)
+            if (!keepAlive) {
+                break
             }
         }
-
-        writeResponse(output, response)
     }
 
     private fun readHttpRequest(input: BufferedInputStream): LocalHttpRequest? {
@@ -355,13 +365,15 @@ class LocalHttpHostService(
         return null
     }
 
-    private fun writeResponse(output: BufferedOutputStream, response: LocalHttpResponse) {
+    private fun writeResponse(output: BufferedOutputStream, response: LocalHttpResponse, keepAlive: Boolean) {
         output.write(
             buildString {
                 append("HTTP/1.1 ${response.statusCode} ${response.reasonPhrase}\r\n")
                 append("Content-Type: ${response.contentType}\r\n")
                 append("Content-Length: ${response.bodyBytes.size}\r\n")
-                append("Connection: close\r\n\r\n")
+                append("Connection: ")
+                append(if (keepAlive) "keep-alive" else "close")
+                append("\r\n\r\n")
             }.toByteArray(Charsets.UTF_8)
         )
         output.write(response.bodyBytes)

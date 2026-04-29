@@ -47,11 +47,11 @@ import com.localbridge.android.models.TransferState
 import com.localbridge.android.repositories.LocalDeviceProfileRepository
 import com.localbridge.android.repositories.SettingsRepository
 import com.localbridge.android.repositories.TransferRepository
-import java.io.ByteArrayOutputStream
 import java.io.Closeable
 import java.io.File
 import java.io.FileInputStream
 import java.io.InputStream
+import java.io.OutputStream
 import java.io.RandomAccessFile
 import java.net.HttpURLConnection
 import java.net.URL
@@ -1220,10 +1220,10 @@ class LanFileTransferService(
 
             runtime.accessFile.seek(descriptor.chunkOffset)
             runtime.accessFile.write(chunkBytes)
+            runtime.nextExpectedChunkIndex += 1
             if (runtime.nextExpectedChunkIndex % AppConstants.transferIncomingSyncChunkInterval == 0) {
                 runtime.accessFile.fd.sync()
             }
-            runtime.nextExpectedChunkIndex += 1
 
             val newTransferredBytes = (transfer.transferredBytes + chunkBytes.size).coerceAtMost(transfer.totalBytes)
             val metrics = runtime.captureMetrics(newTransferredBytes, transfer.totalBytes)
@@ -1475,14 +1475,11 @@ class LanFileTransferService(
         )
 
         val boundary = "LocalBridgeBoundary${UUID.randomUUID().toString().replace("-", "")}"
-        val requestBody = buildMultipartBody(
-            boundary = boundary,
-            metadataJson = ProtocolJson.format.encodeToString(
-                ProtocolEnvelope.serializer(FileTransferChunkDescriptorDto.serializer()),
-                metadataEnvelope
-            ),
-            chunkBytes = chunkBytes
-        )
+        val metadataBytes = ProtocolJson.format.encodeToString(
+            ProtocolEnvelope.serializer(FileTransferChunkDescriptorDto.serializer()),
+            metadataEnvelope
+        ).toByteArray(Charsets.UTF_8)
+        val multipartSections = buildMultipartBodySections(boundary)
 
         val connection = (URL(buildPeerUrl(session.peer, AppConstants.transferChunkPath)).openConnection() as HttpURLConnection).apply {
             requestMethod = "POST"
@@ -1491,12 +1488,22 @@ class LanFileTransferService(
             doOutput = true
             setRequestProperty("Content-Type", "multipart/form-data; boundary=$boundary")
             setRequestProperty("Accept", "application/json")
-            setFixedLengthStreamingMode(requestBody.size)
+            setFixedLengthStreamingMode(
+                multipartSections.totalLength(
+                    metadataLength = metadataBytes.size,
+                    chunkLength = chunkBytes.size
+                )
+            )
         }
 
         return try {
             connection.outputStream.use { output ->
-                output.write(requestBody)
+                writeMultipartBody(
+                    output = output,
+                    sections = multipartSections,
+                    metadataBytes = metadataBytes,
+                    chunkBytes = chunkBytes
+                )
             }
 
             val statusCode = connection.responseCode
@@ -1726,23 +1733,46 @@ class LanFileTransferService(
         )
     }
 
-    private fun buildMultipartBody(boundary: String, metadataJson: String, chunkBytes: ByteArray): ByteArray {
-        val output = ByteArrayOutputStream()
-        output.write("--$boundary\r\n".toByteArray(Charsets.ISO_8859_1))
-        output.write(
-            "Content-Disposition: form-data; name=\"${ProtocolConstants.multipartMetadataPartName}\"\r\n".toByteArray(Charsets.ISO_8859_1)
+    private fun buildMultipartBodySections(boundary: String): MultipartBodySections {
+        val metadataPrefix = buildString {
+            append("--")
+            append(boundary)
+            append("\r\n")
+            append("Content-Disposition: form-data; name=\"")
+            append(ProtocolConstants.multipartMetadataPartName)
+            append("\"\r\n")
+            append("Content-Type: application/json\r\n\r\n")
+        }.toByteArray(Charsets.ISO_8859_1)
+
+        val binaryPrefix = buildString {
+            append("\r\n--")
+            append(boundary)
+            append("\r\n")
+            append("Content-Disposition: form-data; name=\"")
+            append(ProtocolConstants.multipartBinaryPartName)
+            append("\"; filename=\"chunk.bin\"\r\n")
+            append("Content-Type: application/octet-stream\r\n\r\n")
+        }.toByteArray(Charsets.ISO_8859_1)
+
+        val suffix = "\r\n--$boundary--\r\n".toByteArray(Charsets.ISO_8859_1)
+        return MultipartBodySections(
+            metadataPrefix = metadataPrefix,
+            binaryPrefix = binaryPrefix,
+            suffix = suffix
         )
-        output.write("Content-Type: application/json\r\n\r\n".toByteArray(Charsets.ISO_8859_1))
-        output.write(metadataJson.toByteArray(Charsets.UTF_8))
-        output.write("\r\n".toByteArray(Charsets.ISO_8859_1))
-        output.write("--$boundary\r\n".toByteArray(Charsets.ISO_8859_1))
-        output.write(
-            "Content-Disposition: form-data; name=\"${ProtocolConstants.multipartBinaryPartName}\"; filename=\"chunk.bin\"\r\n".toByteArray(Charsets.ISO_8859_1)
-        )
-        output.write("Content-Type: application/octet-stream\r\n\r\n".toByteArray(Charsets.ISO_8859_1))
+    }
+
+    private fun writeMultipartBody(
+        output: OutputStream,
+        sections: MultipartBodySections,
+        metadataBytes: ByteArray,
+        chunkBytes: ByteArray
+    ) {
+        output.write(sections.metadataPrefix)
+        output.write(metadataBytes)
+        output.write(sections.binaryPrefix)
         output.write(chunkBytes)
-        output.write("\r\n--$boundary--\r\n".toByteArray(Charsets.ISO_8859_1))
-        return output.toByteArray()
+        output.write(sections.suffix)
     }
 
     private fun parseMultipartRequest(request: LocalHttpRequest): MultipartPayload? {
@@ -2438,6 +2468,20 @@ class LanFileTransferService(
     private data class MultipartPart(
         val body: ByteArray
     )
+
+    private data class MultipartBodySections(
+        val metadataPrefix: ByteArray,
+        val binaryPrefix: ByteArray,
+        val suffix: ByteArray
+    ) {
+        fun totalLength(metadataLength: Int, chunkLength: Int): Long {
+            return metadataPrefix.size.toLong() +
+                metadataLength.toLong() +
+                binaryPrefix.size.toLong() +
+                chunkLength.toLong() +
+                suffix.size.toLong()
+        }
+    }
 
     private data class SavedTransferDestination(
         val savedPath: String,
