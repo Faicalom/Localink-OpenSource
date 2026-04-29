@@ -1,0 +1,83 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <sys:String x:Key="AppTitle" xmlns:sys="clr-namespace:System;assembly=mscorlib">Localink</sys:String>
+    <sys:String x:Key="AppSubtitle" xmlns:sys="clr-namespace:System;assembly=mscorlib">Offline Windows-to-phone bridge over local hotspot or LAN</sys:String>
+    <sys:String x:Key="DesktopHostLabel" xmlns:sys="clr-namespace:System;assembly=mscorlib">Desktop Host</sys:String>
+    <sys:String x:Key="CurrentRouteLabel" xmlns:sys="clr-namespace:System;assembly=mscorlib">Current route:</sys:String>
+    <sys:String x:Key="ConnectionOverviewTitle" xmlns:sys="clr-namespace:System;assembly=mscorlib">Connection Overview</sys:String>
+    <sys:String x:Key="StateLabel" xmlns:sys="clr-namespace:System;assembly=mscorlib">State</sys:String>
+    <sys:String x:Key="ModeLabel" xmlns:sys="clr-namespace:System;assembly=mscorlib">Mode</sys:String>
+    <sys:String x:Key="HostLabel" xmlns:sys="clr-namespace:System;assembly=mscorlib">Host</sys:String>
+    <sys:String x:Key="ActivePeerLabel" xmlns:sys="clr-namespace:System;assembly=mscorlib">Active Peer</sys:String>
+    <sys:String x:Key="PairingCodeLabel" xmlns:sys="clr-namespace:System;assembly=mscorlib">Pairing Code</sys:String>
+    <sys:String x:Key="ListeningPrefix" xmlns:sys="clr-namespace:System;assembly=mscorlib">Listening:</sys:String>
+    <sys:String x:Key="ActiveTransportTitle" xmlns:sys="clr-namespace:System;assembly=mscorlib">Active transport</sys:String>
+    <sys:String x:Key="AvailableRoutesTitle" xmlns:sys="clr-namespace:System;assembly=mscorlib">Available transports</sys:String>
+    <sys:String x:Key="NetworkRoutesTitle" xmlns:sys="clr-namespace:System;assembly=mscorlib">Detected routes</sys:String>
+    <sys:String x:Key="EndpointSummaryTitle" xmlns:sys="clr-namespace:System;assembly=mscorlib">Listener endpoints</sys:String>
+    <sys:String x:Key="ReconnectScheduledTitle" xmlns:sys="clr-namespace:System;assembly=mscorlib">Reconnect scheduled:</sys:String>
+    <sys:String x:Key="LastFailureTitle" xmlns:sys="clr-namespace:System;assembly=mscorlib">Last failure:</sys:String>
+    <sys:String x:Key="LastFailureNone" xmlns:sys="clr-namespace:System;assembly=mscorlib">none</sys:String>
+    <sys:String x:Key="DevicesTitle" xmlns:sys="clr-namespace:System;assembly=mscorlib">Devices</sys:String>
+    <sys:String x:Key="KnownPeersLabel" xmlns:sys="clr-namespace:System;assembly=mscorlib">Known peers:</sys:String>
+    <sys:String x:Key="RefreshButton" xmlns:sys="clr-namespace:System;assembly=mscorlib">Refresh</sys:String>
+    <sys:String x:Key="PlatformLabel" xmlns:sys="clr-namespace:System;assembly=mscorlib">Platform:</sys:String>
+    <sys:String x:Key="TransportLabel" xmlns:sys="clr-namespace:System;assembly=mscorlib">Transport:</sys:String>
+    <sys:String x:Key="EndpointLabel" xmlns:sys="clr-namespace:System;assembly=mscorlib">Endpoint:</sys:String>
+    <sys:String x:Key="SelectDevicePrompt" xmlns:sys="clr-namespace:System;assembly=mscorlib">Select a device to connect</sys:String>
+    <sys:String x:Key="PairingHintText" xmlns:sys="clr-namespace:System;assembly=mscorlib">Enter the code shown on the selected device only when this PC starts the session. If the phone starts the Bluetooth session, keep this PC open and enter this PC's code on Android instead. Bluetooth is slower than local Wi-Fi and is best for chat plus files up to 300 MB.</sys:String>
+    <sys:String x:Key="YourPairingCodeLabel" xmlns:sys="clr-namespace:System;assembly=mscorlib">Your pairing code:</sys:String>
+    <sys:String x:Key="ConnectButton" xmlns:sys="clr-namespace:System;assembly=mscorlib">Connect</sys:String>
+    <sys:String x:Key="DisconnectButton" xmlns:sys="clr-namespace:System;assembly=mscorlib">Disconnect</sys:String>
+    <sys:String x:Key="ToggleTrustButton" xmlns:sys="clr-namespace:System;assembly=mscorlib">Toggle Trust</sys:String>
+    <sys:String x:Key="ChatTab" xmlns:sys="clr-namespace:System;assembly=mscorlib">Chat</sys:String>
+    <sys:String x:Key="TransfersTab" xmlns:sys="clr-namespace:System;assembly=mscorlib">Transfers</sys:String>
+    <sys:String x:Key="SettingsTab" xmlns:sys="clr-namespace:System;assembly=mscorlib">Settings</sys:String>
+    <sys:String x:Key="LogsTab" xmlns:sys="clr-namespace:System;assembly=mscorlib">Logs</sys:String>
+    <sys:String x:Key="ChatTitle" xmlns:sys="clr-namespace:System;assembly=mscorlib">Chat</sys:String>
+    <sys:String x:Key="SendButton" xmlns:sys="clr-namespace:System;assembly=mscorlib">Send</sys:String>
+    <sys:String x:Key="TransfersTitle" xmlns:sys="clr-namespace:System;assembly=mscorlib">Transfers</sys:String>
+    <sys:String x:Key="IncomingTransferSuffix" xmlns:sys="clr-namespace:System;assembly=mscorlib">transfer</sys:String>
+    <sys:String x:Key="PeerPrefix" xmlns:sys="clr-namespace:System;assembly=mscorlib">Peer:</sys:String>
+    <sys:String x:Key="TypePrefix" xmlns:sys="clr-namespace:System;assembly=mscorlib">Type:</sys:String>
+    <sys:String x:Key="CreatedPrefix" xmlns:sys="clr-namespace:System;assembly=mscorlib">Created:</sys:String>
+    <sys:String x:Key="OpenButton" xmlns:sys="clr-namespace:System;assembly=mscorlib">Open</sys:String>
+    <sys:String x:Key="PauseButton" xmlns:sys="clr-namespace:System;assembly=mscorlib">Pause</sys:String>
+    <sys:String x:Key="ResumeButton" xmlns:sys="clr-namespace:System;assembly=mscorlib">Resume</sys:String>
+    <sys:String x:Key="CancelButton" xmlns:sys="clr-namespace:System;assembly=mscorlib">Cancel</sys:String>
+    <sys:String x:Key="SelectFilesButton" xmlns:sys="clr-namespace:System;assembly=mscorlib">Select Files</sys:String>
+    <sys:String x:Key="SelectFolderButton" xmlns:sys="clr-namespace:System;assembly=mscorlib">Select Folder</sys:String>
+    <sys:String x:Key="SettingsTitle" xmlns:sys="clr-namespace:System;assembly=mscorlib">Settings</sys:String>
+    <sys:String x:Key="PreferredModeLabel" xmlns:sys="clr-namespace:System;assembly=mscorlib">Preferred connection mode</sys:String>
+    <sys:String x:Key="PreferredModeHint" xmlns:sys="clr-namespace:System;assembly=mscorlib">Auto prefers hotspot/LAN first. Bluetooth stays available as a slower fallback mainly for messages.</sys:String>
+    <sys:String x:Key="LanguageLabel" xmlns:sys="clr-namespace:System;assembly=mscorlib">App language</sys:String>
+    <sys:String x:Key="LanguageHint" xmlns:sys="clr-namespace:System;assembly=mscorlib">Choose the desktop UI language. Logs and low-level protocol diagnostics remain in English.</sys:String>
+    <sys:String x:Key="DownloadFolderLabel" xmlns:sys="clr-namespace:System;assembly=mscorlib">Download folder</sys:String>
+    <sys:String x:Key="DownloadFolderHint" xmlns:sys="clr-namespace:System;assembly=mscorlib">Received files are saved to this folder when a transfer completes.</sys:String>
+    <sys:String x:Key="TransferSizeNoteLabel" xmlns:sys="clr-namespace:System;assembly=mscorlib">Transfer size note</sys:String>
+    <sys:String x:Key="TransferSizeNoteText" xmlns:sys="clr-namespace:System;assembly=mscorlib">This build now supports files up to 20 GB per transfer over hotspot/LAN. Practical speed and stability still depend on storage performance, cable-free signal quality, and how stable the local route stays during long transfers.</sys:String>
+    <sys:String x:Key="AutoDiscoveryCheckbox" xmlns:sys="clr-namespace:System;assembly=mscorlib">Auto-start discovery on launch</sys:String>
+    <sys:String x:Key="RouteSensorTitle" xmlns:sys="clr-namespace:System;assembly=mscorlib">Network route sensor</sys:String>
+    <sys:String x:Key="RouteSensorHint" xmlns:sys="clr-namespace:System;assembly=mscorlib">Windows uses detected local adapters such as Wi-Fi, hotspot, Ethernet, PdaNet, and similar bridges for discovery. GPS location is not required on the desktop side.</sys:String>
+    <sys:String x:Key="TrustedDevicesLabel" xmlns:sys="clr-namespace:System;assembly=mscorlib">Trusted devices:</sys:String>
+    <sys:String x:Key="RemoveButton" xmlns:sys="clr-namespace:System;assembly=mscorlib">Remove</sys:String>
+    <sys:String x:Key="SaveSettingsButton" xmlns:sys="clr-namespace:System;assembly=mscorlib">Save Settings</sys:String>
+    <sys:String x:Key="HistoryTitle" xmlns:sys="clr-namespace:System;assembly=mscorlib">History</sys:String>
+    <sys:String x:Key="HistoryHint" xmlns:sys="clr-namespace:System;assembly=mscorlib">These buttons clear local history records only. Saved files already written to disk stay in your download folder.</sys:String>
+    <sys:String x:Key="ClearChatHistoryButton" xmlns:sys="clr-namespace:System;assembly=mscorlib">Clear Chat History</sys:String>
+    <sys:String x:Key="ClearTransferHistoryButton" xmlns:sys="clr-namespace:System;assembly=mscorlib">Clear Transfer History</sys:String>
+    <sys:String x:Key="ClearAppLogButton" xmlns:sys="clr-namespace:System;assembly=mscorlib">Clear App Log</sys:String>
+    <sys:String x:Key="LogsTitle" xmlns:sys="clr-namespace:System;assembly=mscorlib">Logs</sys:String>
+    <sys:String x:Key="DesktopLogFileLabel" xmlns:sys="clr-namespace:System;assembly=mscorlib">Desktop log file:</sys:String>
+    <sys:String x:Key="RetryButton" xmlns:sys="clr-namespace:System;assembly=mscorlib">Retry</sys:String>
+    <sys:String x:Key="CopyMenuItem" xmlns:sys="clr-namespace:System;assembly=mscorlib">Copy</sys:String>
+    <sys:String x:Key="CopyTooltip" xmlns:sys="clr-namespace:System;assembly=mscorlib">Click the message bubble to copy its text.</sys:String>
+    <sys:String x:Key="EmptyChatState" xmlns:sys="clr-namespace:System;assembly=mscorlib">No messages yet. Connect to a local peer to start chatting.</sys:String>
+    <sys:String x:Key="AttachmentSuffix" xmlns:sys="clr-namespace:System;assembly=mscorlib">attachment</sys:String>
+    <sys:String x:Key="TransferStatePrefix" xmlns:sys="clr-namespace:System;assembly=mscorlib">Transfer state:</sys:String>
+    <sys:String x:Key="ConnectionModeAuto" xmlns:sys="clr-namespace:System;assembly=mscorlib">Auto</sys:String>
+    <sys:String x:Key="ConnectionModeLan" xmlns:sys="clr-namespace:System;assembly=mscorlib">Local Wi-Fi / Hotspot</sys:String>
+    <sys:String x:Key="ConnectionModeBluetooth" xmlns:sys="clr-namespace:System;assembly=mscorlib">Bluetooth</sys:String>
+    <sys:String x:Key="LanguageEnglish" xmlns:sys="clr-namespace:System;assembly=mscorlib">English</sys:String>
+    <sys:String x:Key="LanguageArabic" xmlns:sys="clr-namespace:System;assembly=mscorlib">Arabic</sys:String>
+</ResourceDictionary>

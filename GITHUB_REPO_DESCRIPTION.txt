@@ -1,0 +1,7 @@
+Short GitHub repository description:
+
+Localink is an offline Windows + Android local sharing and chat project with Wi-Fi / hotspot transfers and Bluetooth fallback.
+
+Alternative shorter version:
+
+Offline local sharing and chat between Windows and Android with Wi-Fi / hotspot and Bluetooth fallback.

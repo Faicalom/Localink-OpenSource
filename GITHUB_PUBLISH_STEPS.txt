@@ -1,0 +1,25 @@
+GitHub Publish Steps
+
+1. Create a new GitHub repository named:
+   Localink
+
+2. Upload the contents of this folder:
+   Localink-OpenSource
+
+3. Commit and push the source code.
+
+4. Go to the Releases section on GitHub.
+
+5. Create a new release:
+   - Tag: v1.0.0
+   - Title: Localink v1.0.0
+
+6. Upload these files from your public release folder:
+   - Localink-Windows-Setup.exe
+   - Localink-Android-Release-v1.0.0.apk
+
+7. Copy the download links from GITHUB_RELEASE_LINKS.txt
+   and replace YOUR-USERNAME with your real GitHub username.
+
+8. Put the short description from GITHUB_REPO_DESCRIPTION.txt
+   into the repository description field if you want.

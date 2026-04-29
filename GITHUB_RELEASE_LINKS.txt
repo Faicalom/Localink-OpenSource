@@ -1,0 +1,22 @@
+GitHub Release Link Template
+
+Replace YOUR-USERNAME with your GitHub username after creating the repository:
+
+Windows setup:
+https://github.com/YOUR-USERNAME/Localink/releases/latest/download/Localink-Windows-Setup.exe
+
+Android APK:
+https://github.com/YOUR-USERNAME/Localink/releases/latest/download/Localink-Android-Release-v1.0.0.apk
+
+Suggested release title:
+Localink v1.0.0
+
+Suggested release files to upload:
+- Localink-Windows-Setup.exe
+- Localink-Android-Release-v1.0.0.apk
+
+Suggested release summary:
+- Windows desktop installer
+- Android release APK
+- Offline local transfers over Wi-Fi / hotspot
+- Bluetooth fallback for chat and small files

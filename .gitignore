@@ -1,0 +1,33 @@
+# Windows / .NET
+bin/
+obj/
+.vs/
+*.user
+*.suo
+*.cache
+*.pdb
+
+# Android / Gradle
+.gradle/
+.idea/
+build/
+app/build/
+local.properties
+keystore.properties
+signing/
+
+# Packaging outputs
+installer/output/
+Public-Releases/
+
+# Local debugging artifacts
+tools/live-debug/
+*.log
+*.bak
+*.orig
+*.pre-lan-restore-backup
+
+# OS / editor
+Thumbs.db
+Desktop.ini
+.DS_Store

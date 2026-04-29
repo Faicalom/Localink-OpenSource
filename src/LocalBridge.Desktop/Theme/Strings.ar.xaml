@@ -1,0 +1,83 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <sys:String x:Key="AppTitle" xmlns:sys="clr-namespace:System;assembly=mscorlib">Localink</sys:String>
+    <sys:String x:Key="AppSubtitle" xmlns:sys="clr-namespace:System;assembly=mscorlib">جسر محلي بدون إنترنت بين ويندوز والهاتف عبر نقطة الاتصال أو الشبكة المحلية</sys:String>
+    <sys:String x:Key="DesktopHostLabel" xmlns:sys="clr-namespace:System;assembly=mscorlib">مضيف ويندوز</sys:String>
+    <sys:String x:Key="CurrentRouteLabel" xmlns:sys="clr-namespace:System;assembly=mscorlib">المسار الحالي:</sys:String>
+    <sys:String x:Key="ConnectionOverviewTitle" xmlns:sys="clr-namespace:System;assembly=mscorlib">نظرة الاتصال</sys:String>
+    <sys:String x:Key="StateLabel" xmlns:sys="clr-namespace:System;assembly=mscorlib">الحالة</sys:String>
+    <sys:String x:Key="ModeLabel" xmlns:sys="clr-namespace:System;assembly=mscorlib">الوضع</sys:String>
+    <sys:String x:Key="HostLabel" xmlns:sys="clr-namespace:System;assembly=mscorlib">المضيف</sys:String>
+    <sys:String x:Key="ActivePeerLabel" xmlns:sys="clr-namespace:System;assembly=mscorlib">الجهاز النشط</sys:String>
+    <sys:String x:Key="PairingCodeLabel" xmlns:sys="clr-namespace:System;assembly=mscorlib">رمز الاقتران</sys:String>
+    <sys:String x:Key="ListeningPrefix" xmlns:sys="clr-namespace:System;assembly=mscorlib">الاستماع:</sys:String>
+    <sys:String x:Key="ActiveTransportTitle" xmlns:sys="clr-namespace:System;assembly=mscorlib">النقل النشط</sys:String>
+    <sys:String x:Key="AvailableRoutesTitle" xmlns:sys="clr-namespace:System;assembly=mscorlib">المسارات المتاحة</sys:String>
+    <sys:String x:Key="NetworkRoutesTitle" xmlns:sys="clr-namespace:System;assembly=mscorlib">الواجهات المكتشفة</sys:String>
+    <sys:String x:Key="EndpointSummaryTitle" xmlns:sys="clr-namespace:System;assembly=mscorlib">عناوين الاستماع</sys:String>
+    <sys:String x:Key="ReconnectScheduledTitle" xmlns:sys="clr-namespace:System;assembly=mscorlib">إعادة الاتصال مجدولة:</sys:String>
+    <sys:String x:Key="LastFailureTitle" xmlns:sys="clr-namespace:System;assembly=mscorlib">آخر فشل:</sys:String>
+    <sys:String x:Key="LastFailureNone" xmlns:sys="clr-namespace:System;assembly=mscorlib">لا يوجد</sys:String>
+    <sys:String x:Key="DevicesTitle" xmlns:sys="clr-namespace:System;assembly=mscorlib">الأجهزة</sys:String>
+    <sys:String x:Key="KnownPeersLabel" xmlns:sys="clr-namespace:System;assembly=mscorlib">الأجهزة المعروفة:</sys:String>
+    <sys:String x:Key="RefreshButton" xmlns:sys="clr-namespace:System;assembly=mscorlib">تحديث</sys:String>
+    <sys:String x:Key="PlatformLabel" xmlns:sys="clr-namespace:System;assembly=mscorlib">المنصة:</sys:String>
+    <sys:String x:Key="TransportLabel" xmlns:sys="clr-namespace:System;assembly=mscorlib">النقل:</sys:String>
+    <sys:String x:Key="EndpointLabel" xmlns:sys="clr-namespace:System;assembly=mscorlib">العنوان:</sys:String>
+    <sys:String x:Key="SelectDevicePrompt" xmlns:sys="clr-namespace:System;assembly=mscorlib">اختر جهازًا للاتصال</sys:String>
+    <sys:String x:Key="PairingHintText" xmlns:sys="clr-namespace:System;assembly=mscorlib">أدخل الرمز الظاهر على الجهاز المحدد فقط عندما يبدأ هذا الكمبيوتر الجلسة. إذا كان الهاتف هو من يبدأ جلسة البلوتوث، فاترك هذا الكمبيوتر مفتوحًا وأدخل رمز هذا الكمبيوتر داخل أندرويد بدلًا من ذلك. البلوتوث أبطأ من الواي فاي المحلي، وهو مناسب للدردشة والملفات حتى 300 ميجابايت.</sys:String>
+    <sys:String x:Key="YourPairingCodeLabel" xmlns:sys="clr-namespace:System;assembly=mscorlib">رمز الاقتران الخاص بك:</sys:String>
+    <sys:String x:Key="ConnectButton" xmlns:sys="clr-namespace:System;assembly=mscorlib">اتصال</sys:String>
+    <sys:String x:Key="DisconnectButton" xmlns:sys="clr-namespace:System;assembly=mscorlib">قطع الاتصال</sys:String>
+    <sys:String x:Key="ToggleTrustButton" xmlns:sys="clr-namespace:System;assembly=mscorlib">تبديل الثقة</sys:String>
+    <sys:String x:Key="ChatTab" xmlns:sys="clr-namespace:System;assembly=mscorlib">الدردشة</sys:String>
+    <sys:String x:Key="TransfersTab" xmlns:sys="clr-namespace:System;assembly=mscorlib">النقل</sys:String>
+    <sys:String x:Key="SettingsTab" xmlns:sys="clr-namespace:System;assembly=mscorlib">الإعدادات</sys:String>
+    <sys:String x:Key="LogsTab" xmlns:sys="clr-namespace:System;assembly=mscorlib">السجلات</sys:String>
+    <sys:String x:Key="ChatTitle" xmlns:sys="clr-namespace:System;assembly=mscorlib">الدردشة</sys:String>
+    <sys:String x:Key="SendButton" xmlns:sys="clr-namespace:System;assembly=mscorlib">إرسال</sys:String>
+    <sys:String x:Key="TransfersTitle" xmlns:sys="clr-namespace:System;assembly=mscorlib">النقل</sys:String>
+    <sys:String x:Key="IncomingTransferSuffix" xmlns:sys="clr-namespace:System;assembly=mscorlib">نقل</sys:String>
+    <sys:String x:Key="PeerPrefix" xmlns:sys="clr-namespace:System;assembly=mscorlib">الجهاز:</sys:String>
+    <sys:String x:Key="TypePrefix" xmlns:sys="clr-namespace:System;assembly=mscorlib">النوع:</sys:String>
+    <sys:String x:Key="CreatedPrefix" xmlns:sys="clr-namespace:System;assembly=mscorlib">أُنشئ:</sys:String>
+    <sys:String x:Key="OpenButton" xmlns:sys="clr-namespace:System;assembly=mscorlib">فتح</sys:String>
+    <sys:String x:Key="PauseButton" xmlns:sys="clr-namespace:System;assembly=mscorlib">إيقاف مؤقت</sys:String>
+    <sys:String x:Key="ResumeButton" xmlns:sys="clr-namespace:System;assembly=mscorlib">استئناف</sys:String>
+    <sys:String x:Key="CancelButton" xmlns:sys="clr-namespace:System;assembly=mscorlib">إلغاء</sys:String>
+    <sys:String x:Key="SelectFilesButton" xmlns:sys="clr-namespace:System;assembly=mscorlib">اختيار ملفات</sys:String>
+    <sys:String x:Key="SelectFolderButton" xmlns:sys="clr-namespace:System;assembly=mscorlib">اختيار مجلد</sys:String>
+    <sys:String x:Key="SettingsTitle" xmlns:sys="clr-namespace:System;assembly=mscorlib">الإعدادات</sys:String>
+    <sys:String x:Key="PreferredModeLabel" xmlns:sys="clr-namespace:System;assembly=mscorlib">وضع الاتصال المفضل</sys:String>
+    <sys:String x:Key="PreferredModeHint" xmlns:sys="clr-namespace:System;assembly=mscorlib">الوضع التلقائي يفضّل نقطة الاتصال أو الشبكة المحلية أولًا. البلوتوث يبقى كخيار أبطأ للرسائل أساسًا.</sys:String>
+    <sys:String x:Key="LanguageLabel" xmlns:sys="clr-namespace:System;assembly=mscorlib">لغة التطبيق</sys:String>
+    <sys:String x:Key="LanguageHint" xmlns:sys="clr-namespace:System;assembly=mscorlib">اختر لغة واجهة ويندوز. السجلات ورسائل التشخيص المنخفضة تبقى بالإنجليزية.</sys:String>
+    <sys:String x:Key="DownloadFolderLabel" xmlns:sys="clr-namespace:System;assembly=mscorlib">مجلد التنزيل</sys:String>
+    <sys:String x:Key="DownloadFolderHint" xmlns:sys="clr-namespace:System;assembly=mscorlib">تُحفَظ الملفات المستلمة في هذا المجلد بعد اكتمال النقل.</sys:String>
+    <sys:String x:Key="TransferSizeNoteLabel" xmlns:sys="clr-namespace:System;assembly=mscorlib">ملاحظة حجم النقل</sys:String>
+    <sys:String x:Key="TransferSizeNoteText" xmlns:sys="clr-namespace:System;assembly=mscorlib">هذه النسخة تدعم الآن ملفات حتى 20 جيجابايت لكل عملية نقل عبر الشبكة المحلية. السرعة والثبات الفعليان ما زالا يعتمدان على التخزين وجودة الإشارة واستقرار المسار أثناء النقل الطويل.</sys:String>
+    <sys:String x:Key="AutoDiscoveryCheckbox" xmlns:sys="clr-namespace:System;assembly=mscorlib">تشغيل الاكتشاف تلقائيًا عند الفتح</sys:String>
+    <sys:String x:Key="RouteSensorTitle" xmlns:sys="clr-namespace:System;assembly=mscorlib">مستشعر مسار الشبكة</sys:String>
+    <sys:String x:Key="RouteSensorHint" xmlns:sys="clr-namespace:System;assembly=mscorlib">ويندوز يعتمد على الواجهات المحلية المكتشفة مثل الواي فاي ونقطة الاتصال والإيثرنت وPdaNet والجسور المشابهة للاكتشاف. لا يحتاج البرنامج إلى GPS على جهة الكمبيوتر.</sys:String>
+    <sys:String x:Key="TrustedDevicesLabel" xmlns:sys="clr-namespace:System;assembly=mscorlib">الأجهزة الموثوقة:</sys:String>
+    <sys:String x:Key="RemoveButton" xmlns:sys="clr-namespace:System;assembly=mscorlib">إزالة</sys:String>
+    <sys:String x:Key="SaveSettingsButton" xmlns:sys="clr-namespace:System;assembly=mscorlib">حفظ الإعدادات</sys:String>
+    <sys:String x:Key="HistoryTitle" xmlns:sys="clr-namespace:System;assembly=mscorlib">السجل</sys:String>
+    <sys:String x:Key="HistoryHint" xmlns:sys="clr-namespace:System;assembly=mscorlib">هذه الأزرار تمسح سجلات التطبيق المحلية فقط. الملفات المحفوظة على القرص تبقى في مجلد التنزيل.</sys:String>
+    <sys:String x:Key="ClearChatHistoryButton" xmlns:sys="clr-namespace:System;assembly=mscorlib">مسح سجل الدردشة</sys:String>
+    <sys:String x:Key="ClearTransferHistoryButton" xmlns:sys="clr-namespace:System;assembly=mscorlib">مسح سجل النقل</sys:String>
+    <sys:String x:Key="ClearAppLogButton" xmlns:sys="clr-namespace:System;assembly=mscorlib">مسح سجل البرنامج</sys:String>
+    <sys:String x:Key="LogsTitle" xmlns:sys="clr-namespace:System;assembly=mscorlib">السجلات</sys:String>
+    <sys:String x:Key="DesktopLogFileLabel" xmlns:sys="clr-namespace:System;assembly=mscorlib">ملف سجل ويندوز:</sys:String>
+    <sys:String x:Key="RetryButton" xmlns:sys="clr-namespace:System;assembly=mscorlib">إعادة المحاولة</sys:String>
+    <sys:String x:Key="CopyMenuItem" xmlns:sys="clr-namespace:System;assembly=mscorlib">نسخ</sys:String>
+    <sys:String x:Key="CopyTooltip" xmlns:sys="clr-namespace:System;assembly=mscorlib">اضغط على فقاعة الرسالة لنسخ النص.</sys:String>
+    <sys:String x:Key="EmptyChatState" xmlns:sys="clr-namespace:System;assembly=mscorlib">لا توجد رسائل بعد. اتصل بجهاز محلي لبدء الدردشة.</sys:String>
+    <sys:String x:Key="AttachmentSuffix" xmlns:sys="clr-namespace:System;assembly=mscorlib">مرفق</sys:String>
+    <sys:String x:Key="TransferStatePrefix" xmlns:sys="clr-namespace:System;assembly=mscorlib">حالة النقل:</sys:String>
+    <sys:String x:Key="ConnectionModeAuto" xmlns:sys="clr-namespace:System;assembly=mscorlib">تلقائي</sys:String>
+    <sys:String x:Key="ConnectionModeLan" xmlns:sys="clr-namespace:System;assembly=mscorlib">واي فاي محلي / نقطة اتصال</sys:String>
+    <sys:String x:Key="ConnectionModeBluetooth" xmlns:sys="clr-namespace:System;assembly=mscorlib">بلوتوث</sys:String>
+    <sys:String x:Key="LanguageEnglish" xmlns:sys="clr-namespace:System;assembly=mscorlib">English</sys:String>
+    <sys:String x:Key="LanguageArabic" xmlns:sys="clr-namespace:System;assembly=mscorlib">العربية</sys:String>
+</ResourceDictionary>

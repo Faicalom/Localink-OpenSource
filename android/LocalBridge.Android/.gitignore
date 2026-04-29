@@ -1,0 +1,9 @@
+.gradle/
+.gradle-user-home/
+.gradle-user-home-fresh/
+.gradle-user-home*/
+build/
+app/build/
+local.properties
+.idea/
+captures/
