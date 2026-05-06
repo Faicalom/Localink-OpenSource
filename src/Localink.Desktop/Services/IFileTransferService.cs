@@ -1,4 +1,4 @@
-using Localink.Desktop.Models;
+﻿using Localink.Desktop.Models;
 
 namespace Localink.Desktop.Services;
 
@@ -24,3 +24,4 @@ public interface IFileTransferService
 
     Task<int> ClearHistoryAsync(CancellationToken cancellationToken = default);
 }
+

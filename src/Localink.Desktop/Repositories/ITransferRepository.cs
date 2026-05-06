@@ -1,4 +1,4 @@
-using Localink.Desktop.Models;
+﻿using Localink.Desktop.Models;
 
 namespace Localink.Desktop.Repositories;
 
@@ -8,3 +8,4 @@ public interface ITransferRepository
 
     Task SaveAsync(IReadOnlyList<TransferItem> transfers, CancellationToken cancellationToken = default);
 }
+

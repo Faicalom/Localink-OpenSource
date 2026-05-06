@@ -1,5 +1,6 @@
-using System.Collections.ObjectModel;
+﻿using System.Collections.ObjectModel;
 using System.ComponentModel;
+using System.Windows.Media;
 using Localink.Desktop.Core;
 using Localink.Desktop.Core.Mvvm;
 using Localink.Desktop.Core.Routing;
@@ -7,6 +8,7 @@ using Localink.Desktop.Features.Chat;
 using Localink.Desktop.Features.Devices;
 using Localink.Desktop.Features.Settings;
 using Localink.Desktop.Features.Transfers;
+using Localink.Desktop.Infrastructure;
 using Localink.Desktop.Models;
 using Localink.Desktop.Services;
 
@@ -19,6 +21,7 @@ public sealed class HomeScreenViewModel : ObservableObject
     private readonly IConnectionService _connectionService;
     private readonly ILoggerService _loggerService;
     private string _connectionRouteBadge = string.Empty;
+    private ImageSource? _pairingQrImage;
 
     public HomeScreenViewModel(
         AppRouter router,
@@ -76,6 +79,12 @@ public sealed class HomeScreenViewModel : ObservableObject
 
     public string LogFilePath => _loggerService.LogFilePath;
 
+    public ImageSource? PairingQrImage
+    {
+        get => _pairingQrImage;
+        private set => SetProperty(ref _pairingQrImage, value);
+    }
+
     public RelayCommand NavigateHomeCommand { get; }
 
     public AsyncRelayCommand ConnectToSelectedPeerCommand { get; }
@@ -119,6 +128,7 @@ public sealed class HomeScreenViewModel : ObservableObject
         await Devices.InitializeAsync();
         await Chat.LoadAsync();
         await Transfers.LoadAsync();
+        await RefreshPairingQrAsync();
         await _loggerService.LogInfoAsync("Localink Windows app is running with hotspot/LAN plus Bluetooth fallback support.");
     }
 
@@ -186,6 +196,11 @@ public sealed class HomeScreenViewModel : ObservableObject
             ConnectionRouteBadge = ConnectionState.ActiveTransportLabel;
         }
 
+        if (e.PropertyName == nameof(ConnectionState.LocalPairingCode))
+        {
+            _ = RefreshPairingQrAsync();
+        }
+
         ConnectToSelectedPeerCommand.RaiseCanExecuteChanged();
         DisconnectPeerCommand.RaiseCanExecuteChanged();
     }
@@ -209,4 +224,19 @@ public sealed class HomeScreenViewModel : ObservableObject
             _ => false
         };
     }
+
+    private async Task RefreshPairingQrAsync()
+    {
+        try
+        {
+            var localDevice = await _connectionService.GetLocalDeviceProfileAsync();
+            PairingQrImage = PairingQrCodeBuilder.CreateImageSource(ConnectionState.LocalPairingCode, localDevice);
+        }
+        catch (Exception ex)
+        {
+            PairingQrImage = null;
+            await _loggerService.LogWarningAsync($"[PAIRING][QR] QR refresh failed: {ex.Message}");
+        }
+    }
 }
+

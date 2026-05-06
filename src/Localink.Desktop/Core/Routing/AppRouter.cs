@@ -1,4 +1,4 @@
-using Localink.Desktop.Core.Mvvm;
+﻿using Localink.Desktop.Core.Mvvm;
 
 namespace Localink.Desktop.Core.Routing;
 
@@ -17,3 +17,4 @@ public sealed class AppRouter : ObservableObject
         CurrentRoute = route;
     }
 }
+

@@ -1,4 +1,4 @@
-using System.Collections.ObjectModel;
+﻿using System.Collections.ObjectModel;
 using System.Windows;
 using Localink.Desktop.Core.Mvvm;
 using Localink.Desktop.Models;
@@ -194,3 +194,4 @@ public sealed class ChatFeatureViewModel : ObservableObject
         return dispatcher.InvokeAsync(action).Task;
     }
 }
+

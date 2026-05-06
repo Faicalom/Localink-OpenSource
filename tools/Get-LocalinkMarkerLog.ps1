@@ -1,4 +1,4 @@
-param(
+﻿param(
     [ValidateSet("DISCOVERY", "PAIRING", "RECONNECT", "TRANSFER", "SESSION", "STORAGE", "ALL")]
     [string]$Marker = "ALL",
     [int]$TailLines = 200
@@ -20,3 +20,4 @@ if ($Marker -eq "ALL") {
 
 $needle = "[$Marker]"
 $lines | Where-Object { $_.Contains($needle) }
+

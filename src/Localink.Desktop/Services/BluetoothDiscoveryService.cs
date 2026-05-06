@@ -1,4 +1,4 @@
-using InTheHand.Net.Sockets;
+﻿using InTheHand.Net.Sockets;
 using Localink.Core.Discovery;
 using Localink.Desktop.Core;
 using Localink.Desktop.Models;
@@ -365,3 +365,4 @@ public sealed class BluetoothDiscoveryService : IDiscoveryService
             TaskScheduler.Default);
     }
 }
+

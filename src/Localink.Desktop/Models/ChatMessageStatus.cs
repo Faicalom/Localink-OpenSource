@@ -1,4 +1,4 @@
-namespace Localink.Desktop.Models;
+﻿namespace Localink.Desktop.Models;
 
 public enum ChatMessageStatus
 {
@@ -7,3 +7,4 @@ public enum ChatMessageStatus
     Delivered = 2,
     Failed = 3
 }
+

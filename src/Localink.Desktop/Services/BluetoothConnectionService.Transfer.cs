@@ -1,4 +1,4 @@
-using System.IO;
+﻿using System.IO;
 using System.Text.Json;
 using Localink.Core;
 using Localink.Core.Protocol;
@@ -817,3 +817,4 @@ public sealed partial class BluetoothConnectionService
             CanceledAtUtc: DateTimeOffset.UtcNow);
     }
 }
+

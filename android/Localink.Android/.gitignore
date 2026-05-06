@@ -7,3 +7,12 @@ app/build/
 local.properties
 .idea/
 captures/
+*.iml
+*.apk
+*.aab
+*.ap_
+*.jks
+*.keystore
+keystore.properties
+release-build.log
+release-build.err.log

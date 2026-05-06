@@ -1,4 +1,4 @@
-using Localink.Core.Discovery;
+﻿using Localink.Core.Discovery;
 using Localink.Core.Protocol;
 using Xunit;
 
@@ -12,7 +12,7 @@ public sealed class DiscoveryEnvelopeFactoryTests
         var sentAt = DateTimeOffset.UtcNow;
         var packet = new DiscoveryPacket(
             DeviceId: "windows-pc",
-            DeviceName: "Windows-PC",
+            DeviceName: "Faical-PC",
             Platform: "Windows",
             LocalIp: "192.168.137.1",
             ApiPort: 45870,
@@ -30,3 +30,4 @@ public sealed class DiscoveryEnvelopeFactoryTests
         Assert.Equal(packet, envelope.Payload);
     }
 }
+

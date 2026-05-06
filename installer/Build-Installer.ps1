@@ -1,4 +1,4 @@
-param()
+﻿param()
 
 $ErrorActionPreference = "Stop"
 
@@ -28,3 +28,4 @@ if (-not (Test-Path $finalSetup)) {
 Copy-Item $finalSetup $desktopDrop -Force
 Write-Host "Installer ready: $finalSetup" -ForegroundColor Green
 Write-Host "Copied to: $desktopDrop" -ForegroundColor Green
+

@@ -1,41 +1,28 @@
-# Windows / .NET
+.vs/
+.idea/
+.gradle/
 bin/
 obj/
-.vs/
+build/
+TestResults/
+artifacts/
+publish/
+captures/
 *.user
 *.suo
-*.cache
 *.pdb
-
-# Android / Gradle
-.gradle/
-.idea/
-build/
-app/build/
-local.properties
-keystore.properties
-signing/
-captures/
-*.jks
-*.keystore
+*.cache
+*.tmp
 *.apk
 *.aab
-
-# Packaging outputs
-installer/output/
-Public-Releases/
-installer/publish/
-
-# Local debugging artifacts
-tools/live-debug/
-*.log
-*.bak
-*.orig
-*.pre-lan-restore-backup
+*.ap_
+*.jks
+*.keystore
+keystore.properties
+local.properties
 release-build.log
 release-build.err.log
-
-# OS / editor
-Thumbs.db
-Desktop.ini
-.DS_Store
+installer/output/
+installer/publish/
+Public-Releases/
+tools/live-debug/

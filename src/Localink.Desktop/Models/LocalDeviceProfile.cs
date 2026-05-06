@@ -1,4 +1,4 @@
-namespace Localink.Desktop.Models;
+﻿namespace Localink.Desktop.Models;
 
 public sealed class LocalDeviceProfile
 {
@@ -22,3 +22,4 @@ public sealed class LocalDeviceProfile
 
     public DateTimeOffset CreatedAtUtc { get; set; } = DateTimeOffset.UtcNow;
 }
+

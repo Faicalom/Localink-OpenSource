@@ -1,4 +1,4 @@
-using System.IO;
+﻿using System.IO;
 using System.Text.Json;
 using Localink.Core;
 using Localink.Core.Discovery;
@@ -72,3 +72,4 @@ public sealed class LocalDeviceProfileRepository : ILocalDeviceProfileRepository
         return typeof(LocalDeviceProfileRepository).Assembly.GetName().Version?.ToString(3) ?? "0.1.0";
     }
 }
+

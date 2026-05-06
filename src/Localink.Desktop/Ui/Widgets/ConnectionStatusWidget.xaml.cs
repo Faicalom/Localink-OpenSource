@@ -1,4 +1,4 @@
-using System.Windows.Controls;
+﻿using System.Windows.Controls;
 
 namespace Localink.Desktop.Ui.Widgets;
 
@@ -9,3 +9,4 @@ public partial class ConnectionStatusWidget : UserControl
         InitializeComponent();
     }
 }
+

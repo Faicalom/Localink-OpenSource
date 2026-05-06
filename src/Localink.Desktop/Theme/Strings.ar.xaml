@@ -10,6 +10,9 @@
     <sys:String x:Key="HostLabel" xmlns:sys="clr-namespace:System;assembly=mscorlib">المضيف</sys:String>
     <sys:String x:Key="ActivePeerLabel" xmlns:sys="clr-namespace:System;assembly=mscorlib">الجهاز النشط</sys:String>
     <sys:String x:Key="PairingCodeLabel" xmlns:sys="clr-namespace:System;assembly=mscorlib">رمز الاقتران</sys:String>
+    <sys:String x:Key="PairingQrLabel" xmlns:sys="clr-namespace:System;assembly=mscorlib">رمز QR للاقتران</sys:String>
+    <sys:String x:Key="PairingQrHint" xmlns:sys="clr-namespace:System;assembly=mscorlib">امسح هذا الرمز من أندرويد لإرسال رمز الاقتران ومحاولة الاتصال المحلي مباشرة تلقائيًا.</sys:String>
+    <sys:String x:Key="PairingQrUnavailable" xmlns:sys="clr-namespace:System;assembly=mscorlib">رمز QR غير متاح</sys:String>
     <sys:String x:Key="ListeningPrefix" xmlns:sys="clr-namespace:System;assembly=mscorlib">الاستماع:</sys:String>
     <sys:String x:Key="ActiveTransportTitle" xmlns:sys="clr-namespace:System;assembly=mscorlib">النقل النشط</sys:String>
     <sys:String x:Key="AvailableRoutesTitle" xmlns:sys="clr-namespace:System;assembly=mscorlib">المسارات المتاحة</sys:String>

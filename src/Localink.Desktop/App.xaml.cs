@@ -1,4 +1,4 @@
-using System.IO;
+﻿using System.IO;
 using System.Windows;
 using Localink.Desktop.Core;
 using Localink.Desktop.Core.Routing;
@@ -113,3 +113,4 @@ public partial class App : Application
         }
     }
 }
+

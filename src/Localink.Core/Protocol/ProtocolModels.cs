@@ -1,4 +1,4 @@
-namespace Localink.Core.Protocol;
+﻿namespace Localink.Core.Protocol;
 
 public static class ProtocolConstants
 {
@@ -304,3 +304,4 @@ public sealed record FileTransferCancelResponseDto(
     string Status,
     string? FailureReason,
     DateTimeOffset CanceledAtUtc);
+

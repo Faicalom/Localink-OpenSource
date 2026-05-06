@@ -1,4 +1,4 @@
-using Localink.Desktop.Models;
+﻿using Localink.Desktop.Models;
 
 namespace Localink.Desktop.Services;
 
@@ -18,3 +18,4 @@ public interface IChatService
 
     Task<int> ClearHistoryAsync(CancellationToken cancellationToken = default);
 }
+

@@ -1,4 +1,4 @@
-using Localink.Desktop.Models;
+﻿using Localink.Desktop.Models;
 
 namespace Localink.Desktop.Repositories;
 
@@ -19,3 +19,4 @@ public interface ISettingsRepository
         AppLanguage language,
         CancellationToken cancellationToken = default);
 }
+

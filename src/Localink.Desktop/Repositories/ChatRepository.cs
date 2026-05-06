@@ -1,4 +1,4 @@
-using System.IO;
+﻿using System.IO;
 using System.Text.Json;
 using Localink.Core;
 using Localink.Desktop.Core;
@@ -75,3 +75,4 @@ public sealed class ChatRepository : IChatRepository
                value.Contains("incoming peer", StringComparison.OrdinalIgnoreCase);
     }
 }
+

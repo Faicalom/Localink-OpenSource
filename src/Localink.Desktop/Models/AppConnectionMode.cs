@@ -1,4 +1,4 @@
-namespace Localink.Desktop.Models;
+﻿namespace Localink.Desktop.Models;
 
 public enum AppConnectionMode
 {
@@ -6,3 +6,4 @@ public enum AppConnectionMode
     LocalLan = 1,
     BluetoothFallback = 2
 }
+

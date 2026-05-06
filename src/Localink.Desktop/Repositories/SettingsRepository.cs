@@ -1,4 +1,4 @@
-using System.IO;
+﻿using System.IO;
 using System.Text.Json;
 using Localink.Core;
 using Localink.Desktop.Core;
@@ -154,3 +154,4 @@ public sealed class SettingsRepository : ISettingsRepository
         bool AutoStartDiscovery,
         AppLanguage Language);
 }
+

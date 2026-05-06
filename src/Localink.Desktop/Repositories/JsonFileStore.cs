@@ -1,4 +1,4 @@
-using System.IO;
+﻿using System.IO;
 using System.Text.Json;
 using Localink.Core;
 
@@ -53,3 +53,4 @@ internal static class JsonFileStore
         File.Move(tempPath, path, true);
     }
 }
+

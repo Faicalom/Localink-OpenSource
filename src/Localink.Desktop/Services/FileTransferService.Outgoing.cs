@@ -1,4 +1,4 @@
-using System.Diagnostics;
+﻿using System.Diagnostics;
 using System.IO;
 using System.Net.Http;
 using System.Net.Http.Headers;
@@ -759,3 +759,4 @@ public sealed partial class FileTransferService
         }
     }
 }
+

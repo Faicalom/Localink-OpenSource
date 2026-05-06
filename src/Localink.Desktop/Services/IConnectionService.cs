@@ -1,4 +1,4 @@
-using Localink.Core.Protocol;
+﻿using Localink.Core.Protocol;
 using Localink.Desktop.Models;
 
 namespace Localink.Desktop.Services;
@@ -39,3 +39,4 @@ public interface IConnectionService
 
     Task ShutdownAsync(ConnectionStateModel connectionState, CancellationToken cancellationToken = default);
 }
+

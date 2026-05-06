@@ -1,4 +1,4 @@
-using Localink.Desktop.Models;
+﻿using Localink.Desktop.Models;
 
 namespace Localink.Desktop.Services;
 
@@ -14,3 +14,4 @@ public interface IDiscoveryService
 
     Task<LocalDeviceProfile> GetLocalDeviceAsync(CancellationToken cancellationToken = default);
 }
+

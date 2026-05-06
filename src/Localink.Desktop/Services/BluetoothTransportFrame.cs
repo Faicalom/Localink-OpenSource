@@ -1,4 +1,4 @@
-using System.Buffers.Binary;
+﻿using System.Buffers.Binary;
 using System.IO;
 
 namespace Localink.Desktop.Services;
@@ -153,3 +153,4 @@ internal static class BluetoothTransportFrameCodec
         return totalRead;
     }
 }
+

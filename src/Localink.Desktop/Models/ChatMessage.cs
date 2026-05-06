@@ -1,4 +1,4 @@
-using System.Text.Json.Serialization;
+﻿using System.Text.Json.Serialization;
 using System.Windows;
 using Localink.Desktop.Core.Mvvm;
 
@@ -142,3 +142,4 @@ public sealed class ChatMessage : ObservableObject
         _ => "?"
     };
 }
+

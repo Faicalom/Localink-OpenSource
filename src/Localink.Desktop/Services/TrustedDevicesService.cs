@@ -1,4 +1,4 @@
-using Localink.Desktop.Models;
+﻿using Localink.Desktop.Models;
 using Localink.Desktop.Repositories;
 
 namespace Localink.Desktop.Services;
@@ -80,3 +80,4 @@ public sealed class TrustedDevicesService : ITrustedDevicesService
         };
     }
 }
+

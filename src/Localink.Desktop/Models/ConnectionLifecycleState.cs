@@ -1,4 +1,4 @@
-namespace Localink.Desktop.Models;
+﻿namespace Localink.Desktop.Models;
 
 public enum ConnectionLifecycleState
 {
@@ -12,3 +12,4 @@ public enum ConnectionLifecycleState
     Disconnected = 7,
     Failed = 8
 }
+

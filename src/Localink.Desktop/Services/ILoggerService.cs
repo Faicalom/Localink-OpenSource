@@ -1,4 +1,4 @@
-using System.Collections.ObjectModel;
+﻿using System.Collections.ObjectModel;
 
 namespace Localink.Desktop.Services;
 
@@ -16,3 +16,4 @@ public interface ILoggerService
 
     Task ClearAsync(CancellationToken cancellationToken = default);
 }
+

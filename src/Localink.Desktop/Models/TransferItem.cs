@@ -1,4 +1,4 @@
-using System.IO;
+﻿using System.IO;
 using System.Text.Json.Serialization;
 using Localink.Desktop.Core.Mvvm;
 
@@ -408,3 +408,4 @@ public sealed class TransferItem : ObservableObject
         return eta.ToString(@"mm\:ss");
     }
 }
+

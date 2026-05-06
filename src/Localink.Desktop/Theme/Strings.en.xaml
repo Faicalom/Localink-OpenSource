@@ -10,6 +10,9 @@
     <sys:String x:Key="HostLabel" xmlns:sys="clr-namespace:System;assembly=mscorlib">Host</sys:String>
     <sys:String x:Key="ActivePeerLabel" xmlns:sys="clr-namespace:System;assembly=mscorlib">Active Peer</sys:String>
     <sys:String x:Key="PairingCodeLabel" xmlns:sys="clr-namespace:System;assembly=mscorlib">Pairing Code</sys:String>
+    <sys:String x:Key="PairingQrLabel" xmlns:sys="clr-namespace:System;assembly=mscorlib">Pairing QR</sys:String>
+    <sys:String x:Key="PairingQrHint" xmlns:sys="clr-namespace:System;assembly=mscorlib">Scan this on Android to send the pairing token and try a direct local connection automatically.</sys:String>
+    <sys:String x:Key="PairingQrUnavailable" xmlns:sys="clr-namespace:System;assembly=mscorlib">QR unavailable</sys:String>
     <sys:String x:Key="ListeningPrefix" xmlns:sys="clr-namespace:System;assembly=mscorlib">Listening:</sys:String>
     <sys:String x:Key="ActiveTransportTitle" xmlns:sys="clr-namespace:System;assembly=mscorlib">Active transport</sys:String>
     <sys:String x:Key="AvailableRoutesTitle" xmlns:sys="clr-namespace:System;assembly=mscorlib">Available transports</sys:String>

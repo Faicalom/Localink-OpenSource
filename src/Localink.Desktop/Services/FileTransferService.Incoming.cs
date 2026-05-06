@@ -1,4 +1,4 @@
-using System.Diagnostics;
+﻿using System.Diagnostics;
 using System.IO;
 using Localink.Core.Protocol;
 using Localink.Desktop.Core;
@@ -559,3 +559,4 @@ public sealed partial class FileTransferService
         public long PendingBytesSinceFlush { get; set; }
     }
 }
+

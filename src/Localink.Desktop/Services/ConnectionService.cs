@@ -1,4 +1,4 @@
-using System.Net;
+﻿using System.Net;
 using System.Net.Http;
 using System.Net.Http.Json;
 using System.Security.Cryptography;
@@ -41,6 +41,7 @@ public sealed class ConnectionService : IConnectionService
     private CancellationTokenSource? _sessionCleanupCts;
     private Task? _sessionCleanupTask;
     private bool _isInitialized;
+    private bool _suppressReconnectUntilNextConnect;
     private string _localPairingCode = GeneratePairingCode();
 
     public event Action<ConnectionSessionSnapshot?>? SessionChanged;
@@ -231,6 +232,7 @@ public sealed class ConnectionService : IConnectionService
                 return;
             }
 
+            _suppressReconnectUntilNextConnect = false;
             await CancelReconnectLoopAsync();
 
             if (_activeConnection is not null)
@@ -368,6 +370,7 @@ public sealed class ConnectionService : IConnectionService
 
         try
         {
+            _suppressReconnectUntilNextConnect = true;
             await CancelReconnectLoopAsync();
             _reconnectPlan = null;
             await DisconnectInternalAsync(connectionState, notifyRemote: true, markDisconnected: true, cancellationToken);
@@ -830,13 +833,17 @@ public sealed class ConnectionService : IConnectionService
             state.LifecycleState = ConnectionLifecycleState.Disconnected;
             state.StatusText = reason;
             state.LastFailure = reason;
-            state.IsReconnectScheduled = droppedConnection is not null && !droppedConnection.IsIncoming;
+            state.IsReconnectScheduled = droppedConnection is not null &&
+                !droppedConnection.IsIncoming &&
+                !_suppressReconnectUntilNextConnect;
         });
 
         await _loggerService.LogWarningAsync(reason, cancellationToken);
         await NotifySessionChangedAsync(cancellationToken);
 
-        if (droppedConnection is not null && !droppedConnection.IsIncoming)
+        if (droppedConnection is not null &&
+            !droppedConnection.IsIncoming &&
+            !_suppressReconnectUntilNextConnect)
         {
             _reconnectPlan = new ReconnectPlan(
                 PeerId: droppedConnection.Peer.Id,
@@ -2637,3 +2644,4 @@ public sealed class ConnectionService : IConnectionService
         int LastKnownPort,
         string PairingToken);
 }
+

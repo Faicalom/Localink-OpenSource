@@ -1,4 +1,4 @@
-using System.Windows;
+﻿using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
 using Localink.Desktop.Models;
@@ -64,3 +64,4 @@ public partial class ChatMessageBubble : UserControl
         return false;
     }
 }
+

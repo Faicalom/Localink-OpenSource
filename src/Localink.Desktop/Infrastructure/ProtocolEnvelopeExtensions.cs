@@ -1,4 +1,4 @@
-using System.Net.Http;
+﻿using System.Net.Http;
 using System.Net.Http.Json;
 using Microsoft.AspNetCore.Http;
 using Localink.Core;
@@ -30,3 +30,4 @@ public static class ProtocolEnvelopeExtensions
         return response.WriteAsJsonAsync(envelope, JsonDefaults.Options, cancellationToken);
     }
 }
+

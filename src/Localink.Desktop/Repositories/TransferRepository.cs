@@ -1,4 +1,4 @@
-using System.IO;
+﻿using System.IO;
 using System.Text.Json;
 using Localink.Core;
 using Localink.Desktop.Core;
@@ -84,3 +84,4 @@ public sealed class TransferRepository : ITransferRepository
                value.Contains("incoming peer", StringComparison.OrdinalIgnoreCase);
     }
 }
+

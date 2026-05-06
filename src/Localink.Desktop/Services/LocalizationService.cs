@@ -1,4 +1,4 @@
-using System.Globalization;
+﻿using System.Globalization;
 using System.Windows;
 using Localink.Desktop.Models;
 
@@ -81,3 +81,4 @@ public sealed class LocalizationService : ILocalizationService
         return language == AppLanguage.Arabic ? "ar" : "en";
     }
 }
+

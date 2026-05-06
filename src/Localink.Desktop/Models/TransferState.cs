@@ -1,4 +1,4 @@
-namespace Localink.Desktop.Models;
+﻿namespace Localink.Desktop.Models;
 
 public enum TransferState
 {
@@ -11,3 +11,4 @@ public enum TransferState
     Failed = 6,
     Canceled = 7
 }
+

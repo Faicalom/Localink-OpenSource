@@ -1,4 +1,4 @@
-using System.Windows;
+﻿using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
 
@@ -24,3 +24,4 @@ public partial class ChatTransferBubble : UserControl
         set => SetValue(OpenTransferCommandProperty, value);
     }
 }
+

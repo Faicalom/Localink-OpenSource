@@ -1,4 +1,4 @@
-using Localink.Desktop.Core.Mvvm;
+﻿using Localink.Desktop.Core.Mvvm;
 
 namespace Localink.Desktop.Models;
 
@@ -145,3 +145,4 @@ public sealed class ConnectionStateModel : ObservableObject
         set => SetProperty(ref _networkRoutesSummary, value);
     }
 }
+

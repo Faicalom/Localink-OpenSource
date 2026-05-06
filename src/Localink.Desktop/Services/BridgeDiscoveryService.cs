@@ -1,4 +1,4 @@
-using Localink.Core.Discovery;
+﻿using Localink.Core.Discovery;
 using Localink.Desktop.Models;
 
 namespace Localink.Desktop.Services;
@@ -54,3 +54,4 @@ public sealed class BridgeDiscoveryService : IDiscoveryService
         return lanDevice;
     }
 }
+

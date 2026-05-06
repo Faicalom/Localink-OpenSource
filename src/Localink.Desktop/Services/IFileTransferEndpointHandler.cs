@@ -1,4 +1,4 @@
-using System.IO;
+﻿using System.IO;
 using Localink.Core.Protocol;
 using Localink.Desktop.Models;
 
@@ -27,3 +27,4 @@ public interface IFileTransferEndpointHandler
         ConnectionSessionSnapshot session,
         CancellationToken cancellationToken = default);
 }
+

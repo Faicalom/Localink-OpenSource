@@ -1,4 +1,4 @@
-using System.Diagnostics;
+﻿using System.Diagnostics;
 using System.IO;
 using System.Net;
 using System.Net.Http;
@@ -732,3 +732,4 @@ public sealed partial class FileTransferService : IFileTransferService, IFileTra
             TaskScheduler.Default);
     }
 }
+

@@ -1,4 +1,4 @@
-using System.Windows.Controls;
+﻿using System.Windows.Controls;
 using System.Windows.Input;
 
 namespace Localink.Desktop.Ui.Screens;
@@ -19,3 +19,4 @@ public partial class HomeScreen : UserControl
     }
 
 }
+

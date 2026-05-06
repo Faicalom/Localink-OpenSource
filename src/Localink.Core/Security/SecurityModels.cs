@@ -1,4 +1,4 @@
-namespace Localink.Core.Security;
+﻿namespace Localink.Core.Security;
 
 public sealed record DesktopIdentity(
     string DeviceId,
@@ -11,3 +11,4 @@ public sealed record TrustedDevice(
     string SharedSecret,
     DateTimeOffset PairedAtUtc,
     DateTimeOffset LastSeenAtUtc);
+

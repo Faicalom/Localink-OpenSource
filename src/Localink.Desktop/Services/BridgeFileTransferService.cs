@@ -1,4 +1,4 @@
-using System.IO;
+﻿using System.IO;
 using Localink.Core.Protocol;
 using Localink.Desktop.Models;
 
@@ -115,3 +115,4 @@ public sealed class BridgeFileTransferService : IFileTransferService, IFileTrans
         return _lanFileTransferHandler.CancelIncomingTransferAsync(request, session, cancellationToken);
     }
 }
+

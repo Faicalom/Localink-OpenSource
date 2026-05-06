@@ -1,4 +1,4 @@
-namespace Localink.Desktop.Core.Routing;
+﻿namespace Localink.Desktop.Core.Routing;
 
 public static class AppRoutes
 {
@@ -8,3 +8,4 @@ public static class AppRoutes
     public const string Transfers = "transfers";
     public const string Settings = "settings";
 }
+

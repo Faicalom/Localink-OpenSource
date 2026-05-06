@@ -1,4 +1,4 @@
-using System.Collections.Concurrent;
+﻿using System.Collections.Concurrent;
 using System.IO;
 using System.Net.Sockets;
 using System.Security.Cryptography;
@@ -37,6 +37,7 @@ public sealed partial class BluetoothConnectionService
     private ReconnectPlan? _reconnectPlan;
     private string _sharedPairingCode = GeneratePairingCode();
     private bool _isInitialized;
+    private bool _suppressReconnectUntilNextConnect;
 
     public bool IsAvailable { get; private set; }
 
@@ -225,6 +226,7 @@ public sealed partial class BluetoothConnectionService
                 return;
             }
 
+            _suppressReconnectUntilNextConnect = false;
             if (_reconnectCts is null || cancellationToken != _reconnectCts.Token)
             {
                 await CancelReconnectLoopAsync();
@@ -413,6 +415,7 @@ public sealed partial class BluetoothConnectionService
 
     public async Task DisconnectAsync(ConnectionStateModel connectionState, CancellationToken cancellationToken = default)
     {
+        _suppressReconnectUntilNextConnect = true;
         await CancelReconnectLoopAsync();
         await CloseActiveSessionAsync(
             "Bluetooth session disconnected.",
@@ -1530,7 +1533,8 @@ public sealed partial class BluetoothConnectionService
             await CancelHeartbeatLoopAsync();
         }
 
-        if (scheduleReconnect && !session.IsIncoming)
+        var shouldReconnect = scheduleReconnect && !session.IsIncoming && !_suppressReconnectUntilNextConnect;
+        if (shouldReconnect)
         {
             _reconnectPlan = new ReconnectPlan(
                 session.Peer.Id,
@@ -1608,10 +1612,10 @@ public sealed partial class BluetoothConnectionService
                 state.LifecycleState = ConnectionLifecycleState.Disconnected;
                 state.StatusText = reason;
                 state.LastFailure = reason;
-                state.HandshakeSummary = scheduleReconnect && !session.IsIncoming
+                state.HandshakeSummary = shouldReconnect
                     ? "Bluetooth reconnect will retry automatically."
                     : "Bluetooth session closed.";
-                state.IsReconnectScheduled = scheduleReconnect && !session.IsIncoming;
+                state.IsReconnectScheduled = shouldReconnect;
                 if (!state.IsReconnectScheduled)
                 {
                     state.ReconnectAttemptCount = 0;
@@ -1625,7 +1629,7 @@ public sealed partial class BluetoothConnectionService
             $"Bluetooth session with {session.Peer.DisplayName} closed. {reason}",
             cancellationToken);
 
-        if (isActiveSession && scheduleReconnect && !session.IsIncoming)
+        if (isActiveSession && shouldReconnect)
         {
             StartReconnectLoop();
         }
@@ -2030,3 +2034,4 @@ public sealed partial class BluetoothConnectionService
         string BluetoothAddress,
         string PairingToken);
 }
+

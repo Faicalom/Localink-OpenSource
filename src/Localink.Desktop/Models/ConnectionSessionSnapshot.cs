@@ -1,4 +1,4 @@
-namespace Localink.Desktop.Models;
+﻿namespace Localink.Desktop.Models;
 
 public sealed class ConnectionSessionSnapshot
 {
@@ -16,3 +16,4 @@ public sealed class ConnectionSessionSnapshot
 
     public AppConnectionMode TransportMode { get; init; } = AppConnectionMode.LocalLan;
 }
+

@@ -1,4 +1,4 @@
-using Localink.Core.Protocol;
+﻿using Localink.Core.Protocol;
 using Xunit;
 
 namespace Localink.Core.Tests;
@@ -78,3 +78,4 @@ public sealed class ProtocolEnvelopeValidatorTests
         Assert.Equal(ProtocolErrorCodes.InvalidRequest, result.ErrorCode);
     }
 }
+

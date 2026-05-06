@@ -1,4 +1,4 @@
-using Localink.Desktop.Models;
+﻿using Localink.Desktop.Models;
 
 namespace Localink.Desktop.Services;
 
@@ -10,3 +10,4 @@ public interface ITrustedDevicesService
 
     Task UntrustDeviceAsync(string peerId, CancellationToken cancellationToken = default);
 }
+

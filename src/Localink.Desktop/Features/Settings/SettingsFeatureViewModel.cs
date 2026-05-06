@@ -1,4 +1,4 @@
-using Localink.Desktop.Core.Mvvm;
+﻿using Localink.Desktop.Core.Mvvm;
 using Localink.Desktop.Models;
 using Localink.Desktop.Repositories;
 using Localink.Desktop.Services;
@@ -115,3 +115,4 @@ public sealed class SettingsFeatureViewModel : ObservableObject
         public override string ToString() => Label;
     }
 }
+

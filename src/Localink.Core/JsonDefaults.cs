@@ -1,4 +1,4 @@
-using System.Text.Json;
+﻿using System.Text.Json;
 using System.Text.Json.Serialization;
 
 namespace Localink.Core;
@@ -18,3 +18,4 @@ public static class JsonDefaults
         };
     }
 }
+

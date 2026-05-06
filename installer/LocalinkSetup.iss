@@ -1,6 +1,6 @@
-#define MyAppName "Localink"
-#define MyAppVersion "1.0.0"
-#define MyAppPublisher "Localink Project"
+﻿#define MyAppName "Localink"
+#define MyAppVersion "1.1.1"
+#define MyAppPublisher "Faical"
 #define MyAppExeName "Localink.exe"
 
 [Setup]
@@ -46,3 +46,4 @@ begin
     'Preparing the self-contained Localink setup package.';
   Result := '';
 end;
+

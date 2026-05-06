@@ -1,4 +1,4 @@
-using System.Windows;
+﻿using System.Windows;
 using Localink.Desktop.Models;
 
 namespace Localink.Desktop.Services;
@@ -17,3 +17,4 @@ public interface ILocalizationService
 
     string GetString(string key);
 }
+

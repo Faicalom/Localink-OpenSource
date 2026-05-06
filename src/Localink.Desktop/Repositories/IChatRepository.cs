@@ -1,4 +1,4 @@
-using Localink.Desktop.Models;
+﻿using Localink.Desktop.Models;
 
 namespace Localink.Desktop.Repositories;
 
@@ -8,3 +8,4 @@ public interface IChatRepository
 
     Task SaveAsync(IReadOnlyList<ChatMessage> messages, CancellationToken cancellationToken = default);
 }
+

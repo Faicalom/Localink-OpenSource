@@ -1,4 +1,4 @@
-using System.Collections.ObjectModel;
+﻿using System.Collections.ObjectModel;
 using System.Windows.Threading;
 using Localink.Desktop.Core.Mvvm;
 using Localink.Desktop.Models;
@@ -156,7 +156,7 @@ public sealed class DevicesFeatureViewModel : ObservableObject
 
         DiscoveryStatus = Peers.Count == 0
             ? "Automatic hotspot/LAN and Bluetooth discovery is active. No compatible devices are visible right now."
-            : $"Automatic hotspot/LAN and Bluetooth discovery is active. {Peers.Count} compatible device(s) currently visible.";
+            : "Automatic hotspot/LAN and Bluetooth discovery is active.";
 
         if (logRefresh)
         {
@@ -211,3 +211,4 @@ public sealed class DevicesFeatureViewModel : ObservableObject
         await LoadAsync(logRefresh: false);
     }
 }
+

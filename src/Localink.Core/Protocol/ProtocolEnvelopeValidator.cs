@@ -1,4 +1,4 @@
-namespace Localink.Core.Protocol;
+﻿namespace Localink.Core.Protocol;
 
 public sealed record ProtocolEnvelopeValidationResult(
     bool IsValid,
@@ -57,3 +57,4 @@ public static class ProtocolEnvelopeValidator
             ErrorMessage: errorMessage);
     }
 }
+

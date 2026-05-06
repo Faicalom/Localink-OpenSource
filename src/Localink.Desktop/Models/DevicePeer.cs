@@ -1,4 +1,4 @@
-namespace Localink.Desktop.Models;
+﻿namespace Localink.Desktop.Models;
 
 public sealed class DevicePeer
 {
@@ -49,3 +49,4 @@ public sealed class DevicePeer
 
     public string LastSeenLabel => LastSeenAtUtc.ToLocalTime().ToString("HH:mm:ss");
 }
+

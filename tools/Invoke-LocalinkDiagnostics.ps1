@@ -1,4 +1,4 @@
-param(
+﻿param(
     [int]$ApiPort = 45870,
     [int]$TailLines = 40
 )
@@ -29,3 +29,4 @@ if (Test-Path -LiteralPath $logPath) {
 else {
     Write-Warning "Desktop log file was not found yet."
 }
+

@@ -1,4 +1,4 @@
-using Localink.Core.Protocol;
+﻿using Localink.Core.Protocol;
 using Localink.Desktop.Core;
 using Localink.Desktop.Models;
 using Localink.Desktop.Repositories;
@@ -382,3 +382,4 @@ public sealed class ChatService : IChatService
         await _chatRepository.SaveAsync(snapshot, cancellationToken);
     }
 }
+

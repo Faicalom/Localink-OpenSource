@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <ItemGroup>
     <ProjectReference Include="..\Localink.Core\Localink.Core.csproj" />
@@ -10,6 +10,7 @@
 
   <ItemGroup>
     <PackageReference Include="InTheHand.Net.Bluetooth" Version="4.2.4" />
+    <PackageReference Include="QRCoder" Version="1.6.0" />
   </ItemGroup>
 
   <PropertyGroup>
@@ -21,6 +22,9 @@
     <AssemblyName>Localink</AssemblyName>
     <Product>Localink</Product>
     <Title>Localink</Title>
+    <Version>1.1.1</Version>
+    <FileVersion>1.1.1.0</FileVersion>
+    <AssemblyVersion>1.1.1.0</AssemblyVersion>
     <ApplicationIcon>Assets\AppIcon.ico</ApplicationIcon>
   </PropertyGroup>
 
@@ -31,3 +35,4 @@
   </ItemGroup>
 
 </Project>
+

@@ -1,4 +1,4 @@
-namespace Localink.Desktop.Models;
+﻿namespace Localink.Desktop.Models;
 
 public sealed class PairingSession
 {
@@ -16,3 +16,4 @@ public sealed class PairingSession
 
     public bool IsApproved { get; set; }
 }
+

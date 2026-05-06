@@ -1,4 +1,4 @@
-using System.Windows;
+﻿using System.Windows;
 using Localink.Core.Protocol;
 using Localink.Desktop.Models;
 
@@ -299,3 +299,4 @@ public sealed class BridgeConnectionService : IConnectionService
         await dispatcher.InvokeAsync(() => update(connectionState));
     }
 }
+

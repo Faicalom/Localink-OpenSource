@@ -1,4 +1,4 @@
-using Localink.Core.Protocol;
+﻿using Localink.Core.Protocol;
 
 namespace Localink.Core.Discovery;
 
@@ -37,3 +37,4 @@ public static class DiscoveryEnvelopeFactory
             sentAtUtc: payload.SentAtUtc);
     }
 }
+

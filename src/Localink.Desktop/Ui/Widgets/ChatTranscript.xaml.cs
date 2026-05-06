@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Specialized;
 using System.Windows;
 using System.Windows.Controls;
@@ -125,3 +125,4 @@ public partial class ChatTranscript : UserControl
         return true;
     }
 }
+

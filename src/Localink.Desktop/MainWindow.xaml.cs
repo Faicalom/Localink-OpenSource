@@ -1,4 +1,4 @@
-using System.Windows;
+﻿using System.Windows;
 
 namespace Localink.Desktop;
 
@@ -9,3 +9,4 @@ public partial class MainWindow : Window
         InitializeComponent();
     }
 }
+
