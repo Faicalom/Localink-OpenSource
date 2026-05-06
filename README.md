@@ -36,14 +36,14 @@ README.md
 LICENSE.txt
 .gitignore
 src/
-  LocalBridge.Core/
-  LocalBridge.Desktop/
+  Localink.Core/
+  Localink.Desktop/
   README.md
 android/
-  LocalBridge.Android/
+  Localink.Android/
   README.md
 tests/
-  LocalBridge.Core.Tests/
+  Localink.Core.Tests/
 installer/
 tools/
 ```
@@ -75,11 +75,11 @@ Contains local diagnostics helper scripts.
 ### Windows desktop
 
 - open `Localink.sln`
-- build `src/LocalBridge.Desktop`
+- build `src/Localink.Desktop`
 
 ### Android
 
-- open `android/LocalBridge.Android` in Android Studio
+- open `android/Localink.Android` in Android Studio
 - sync Gradle
 - build on a real Android device for practical validation
 

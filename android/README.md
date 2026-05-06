@@ -4,7 +4,7 @@ This folder contains the Android side of the older Localink project line.
 
 ## Included Project
 
-- `LocalBridge.Android`
+- `Localink.Android`
 
 ## Purpose
 
@@ -22,7 +22,7 @@ It is not the newer update branch.
 
 ## Open In Android Studio
 
-- open `android/LocalBridge.Android`
+- open `android/Localink.Android`
 - sync Gradle
 - run on a physical device for realistic validation
 

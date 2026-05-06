@@ -5,16 +5,16 @@ Localink project line.
 
 ## Included Projects
 
-- `LocalBridge.Core`
-- `LocalBridge.Desktop`
+- `Localink.Core`
+- `Localink.Desktop`
 
 ## Responsibilities
 
-### `LocalBridge.Core`
+### `Localink.Core`
 
 Shared protocol, discovery, and security-related models used by the project.
 
-### `LocalBridge.Desktop`
+### `Localink.Desktop`
 
 Windows WPF host that handles:
 - local discovery

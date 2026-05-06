@@ -3,9 +3,9 @@ param()
 $ErrorActionPreference = "Stop"
 
 $root = Split-Path -Parent $PSScriptRoot
-$desktopProject = Join-Path $root "src\LocalBridge.Desktop\LocalBridge.Desktop.csproj"
+$desktopProject = Join-Path $root "src\Localink.Desktop\Localink.Desktop.csproj"
 $publishDir = Join-Path $PSScriptRoot "publish\win-x64"
-$issFile = Join-Path $PSScriptRoot "LocalBridgeSetup.iss"
+$issFile = Join-Path $PSScriptRoot "LocalinkSetup.iss"
 $outputDir = Join-Path $PSScriptRoot "output"
 $finalSetup = Join-Path $outputDir "Localink-Setup.exe"
 $desktopDrop = Join-Path (Split-Path -Parent $root) "Localink-Setup.exe"
