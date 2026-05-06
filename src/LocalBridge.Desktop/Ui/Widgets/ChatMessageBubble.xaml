@@ -1,0 +1,145 @@
+<UserControl x:Class="LocalBridge.Desktop.Ui.Widgets.ChatMessageBubble"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             x:Name="Root"
+             mc:Ignorable="d">
+    <Grid x:Name="LayoutRoot"
+          Margin="0,0,0,14"
+          HorizontalAlignment="Left">
+        <Grid.Style>
+            <Style TargetType="Grid">
+                <Setter Property="HorizontalAlignment" Value="Left" />
+                <Style.Triggers>
+                    <DataTrigger Binding="{Binding IsOutgoing}" Value="True">
+                        <Setter Property="HorizontalAlignment" Value="Right" />
+                    </DataTrigger>
+                </Style.Triggers>
+            </Style>
+        </Grid.Style>
+
+        <Border x:Name="BubbleBorder"
+                MaxWidth="600"
+                Padding="16,14"
+                Cursor="Hand"
+                Background="{StaticResource SurfaceBackgroundBrush}"
+                BorderBrush="{StaticResource PanelBorderBrush}"
+                BorderThickness="1"
+                CornerRadius="22"
+                MouseLeftButtonUp="BubbleBorder_OnMouseLeftButtonUp"
+                ToolTip="{DynamicResource CopyTooltip}">
+            <Border.ContextMenu>
+                <ContextMenu>
+                    <MenuItem Header="{DynamicResource CopyMenuItem}"
+                              Click="CopyMenuItem_OnClick"
+                              CommandParameter="{Binding PlacementTarget.DataContext, RelativeSource={RelativeSource AncestorType=ContextMenu}}" />
+                </ContextMenu>
+            </Border.ContextMenu>
+            <Border.Style>
+                <Style TargetType="Border">
+                    <Setter Property="Background" Value="{StaticResource SurfaceBackgroundBrush}" />
+                    <Setter Property="BorderBrush" Value="{StaticResource PanelBorderBrush}" />
+                    <Style.Triggers>
+                        <DataTrigger Binding="{Binding IsOutgoing}" Value="True">
+                            <Setter Property="Background" Value="{StaticResource AccentBrush}" />
+                            <Setter Property="BorderBrush" Value="{StaticResource AccentBrush}" />
+                        </DataTrigger>
+                    </Style.Triggers>
+                </Style>
+            </Border.Style>
+
+            <StackPanel>
+                <TextBlock x:Name="SenderText"
+                           Foreground="{StaticResource AccentBrush}"
+                           FontWeight="SemiBold"
+                           Text="{Binding SenderLabel}">
+                    <TextBlock.Style>
+                        <Style TargetType="TextBlock">
+                            <Setter Property="Foreground" Value="{StaticResource AccentBrush}" />
+                            <Style.Triggers>
+                                <DataTrigger Binding="{Binding IsOutgoing}" Value="True">
+                                    <Setter Property="Foreground" Value="#08111F" />
+                                </DataTrigger>
+                            </Style.Triggers>
+                        </Style>
+                    </TextBlock.Style>
+                </TextBlock>
+
+                <TextBlock x:Name="BodyText"
+                           Margin="0,8,0,0"
+                           Foreground="{StaticResource PrimaryTextBrush}"
+                           TextWrapping="Wrap"
+                           FontSize="14"
+                           Text="{Binding Text}">
+                    <TextBlock.Style>
+                        <Style TargetType="TextBlock">
+                            <Setter Property="Foreground" Value="{StaticResource PrimaryTextBrush}" />
+                            <Style.Triggers>
+                                <DataTrigger Binding="{Binding IsOutgoing}" Value="True">
+                                    <Setter Property="Foreground" Value="#08111F" />
+                                </DataTrigger>
+                            </Style.Triggers>
+                        </Style>
+                    </TextBlock.Style>
+                </TextBlock>
+
+                <DockPanel Margin="0,10,0,0">
+                    <TextBlock DockPanel.Dock="Left"
+                               Foreground="{StaticResource MutedTextBrush}"
+                               FontSize="11"
+                               Text="{Binding TimestampLabel}" />
+
+                    <StackPanel DockPanel.Dock="Right"
+                                Orientation="Horizontal">
+                        <TextBlock Foreground="{StaticResource AccentSoftBrush}"
+                                   FontWeight="Bold"
+                                   Text="{Binding StatusGlyph}" />
+                        <TextBlock Margin="6,0,0,0"
+                                   Foreground="{StaticResource MutedTextBrush}"
+                                   FontSize="11"
+                                   Text="{Binding StatusLabel}" />
+                    </StackPanel>
+                </DockPanel>
+
+                <TextBlock x:Name="ErrorText"
+                           Margin="0,8,0,0"
+                           Foreground="{StaticResource AccentSoftBrush}"
+                           FontSize="11"
+                           TextWrapping="Wrap"
+                           Text="{Binding LastError}">
+                    <TextBlock.Style>
+                        <Style TargetType="TextBlock">
+                            <Setter Property="Visibility" Value="Collapsed" />
+                            <Style.Triggers>
+                                <DataTrigger Binding="{Binding IsRetryVisible}" Value="True">
+                                    <Setter Property="Visibility" Value="Visible" />
+                                </DataTrigger>
+                            </Style.Triggers>
+                        </Style>
+                    </TextBlock.Style>
+                </TextBlock>
+
+                <Button x:Name="RetryButton"
+                        Margin="0,10,0,0"
+                        HorizontalAlignment="Left"
+                        Padding="10,6"
+                        Command="{Binding RetryMessageCommand, ElementName=Root}"
+                        CommandParameter="{Binding}"
+                        Content="{DynamicResource RetryButton}">
+                    <Button.Style>
+                        <Style TargetType="Button"
+                               BasedOn="{StaticResource SecondaryButtonStyle}">
+                            <Setter Property="Visibility" Value="Collapsed" />
+                            <Style.Triggers>
+                                <DataTrigger Binding="{Binding IsRetryVisible}" Value="True">
+                                    <Setter Property="Visibility" Value="Visible" />
+                                </DataTrigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Button.Style>
+                </Button>
+            </StackPanel>
+        </Border>
+    </Grid>
+</UserControl>

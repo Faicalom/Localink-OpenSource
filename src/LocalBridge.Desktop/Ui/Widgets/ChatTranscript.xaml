@@ -1,0 +1,45 @@
+<UserControl x:Class="LocalBridge.Desktop.Ui.Widgets.ChatTranscript"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:models="clr-namespace:LocalBridge.Desktop.Models"
+             xmlns:widgets="clr-namespace:LocalBridge.Desktop.Ui.Widgets"
+             x:Name="Root"
+             mc:Ignorable="d">
+    <UserControl.Resources>
+        <DataTemplate DataType="{x:Type models:ChatMessage}">
+            <widgets:ChatMessageBubble RetryMessageCommand="{Binding RetryMessageCommand, RelativeSource={RelativeSource AncestorType=widgets:ChatTranscript}}" />
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type models:TransferItem}">
+            <widgets:ChatTransferBubble OpenTransferCommand="{Binding OpenTransferCommand, RelativeSource={RelativeSource AncestorType=widgets:ChatTranscript}}" />
+        </DataTemplate>
+    </UserControl.Resources>
+
+    <Grid Background="{StaticResource PanelAltBackgroundBrush}">
+        <TextBlock x:Name="EmptyStateText"
+                   HorizontalAlignment="Center"
+                   VerticalAlignment="Center"
+                   Foreground="{StaticResource MutedTextBrush}"
+                   Text="{DynamicResource EmptyChatState}"
+                   TextAlignment="Center"
+                   TextWrapping="Wrap" />
+
+        <ScrollViewer x:Name="MessagesScrollViewer"
+                      Background="{StaticResource PanelAltBackgroundBrush}"
+                      VerticalScrollBarVisibility="Auto"
+                      HorizontalScrollBarVisibility="Disabled"
+                      CanContentScroll="False"
+                      PanningMode="VerticalOnly"
+                      PreviewMouseWheel="HandlePreviewMouseWheel">
+            <ItemsControl x:Name="MessagesItems"
+                          ItemsSource="{Binding MessagesSource, ElementName=Root}">
+                <ItemsControl.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <StackPanel />
+                    </ItemsPanelTemplate>
+                </ItemsControl.ItemsPanel>
+            </ItemsControl>
+        </ScrollViewer>
+    </Grid>
+</UserControl>

@@ -5,13 +5,13 @@ VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{29D51D3C-F7AE-4E13-9FFB-64AC9A568964}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Localink.Core", "src\Localink.Core\Localink.Core.csproj", "{9A57D913-3881-4956-9519-8CBB1DCD27BC}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LocalBridge.Core", "src\LocalBridge.Core\LocalBridge.Core.csproj", "{9A57D913-3881-4956-9519-8CBB1DCD27BC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Localink.Desktop", "src\Localink.Desktop\Localink.Desktop.csproj", "{473BD115-236B-4571-BD9B-D612C32159BD}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LocalBridge.Desktop", "src\LocalBridge.Desktop\LocalBridge.Desktop.csproj", "{473BD115-236B-4571-BD9B-D612C32159BD}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{F7E831BD-F3ED-4C19-BD65-48A18DAB5BD0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Localink.Core.Tests", "tests\Localink.Core.Tests\Localink.Core.Tests.csproj", "{FBA99DDF-2538-4B4A-858B-233BA1841CAC}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LocalBridge.Core.Tests", "tests\LocalBridge.Core.Tests\LocalBridge.Core.Tests.csproj", "{FBA99DDF-2538-4B4A-858B-233BA1841CAC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -41,4 +41,3 @@ Global
 		{FBA99DDF-2538-4B4A-858B-233BA1841CAC} = {F7E831BD-F3ED-4C19-BD65-48A18DAB5BD0}
 	EndGlobalSection
 EndGlobal
-

@@ -1,11 +1,11 @@
-﻿param()
+param()
 
 $ErrorActionPreference = "Stop"
 
 $root = Split-Path -Parent $PSScriptRoot
-$desktopProject = Join-Path $root "src\Localink.Desktop\Localink.Desktop.csproj"
+$desktopProject = Join-Path $root "src\LocalBridge.Desktop\LocalBridge.Desktop.csproj"
 $publishDir = Join-Path $PSScriptRoot "publish\win-x64"
-$issFile = Join-Path $PSScriptRoot "LocalinkSetup.iss"
+$issFile = Join-Path $PSScriptRoot "LocalBridgeSetup.iss"
 $outputDir = Join-Path $PSScriptRoot "output"
 $finalSetup = Join-Path $outputDir "Localink-Setup.exe"
 $desktopDrop = Join-Path (Split-Path -Parent $root) "Localink-Setup.exe"
@@ -28,4 +28,3 @@ if (-not (Test-Path $finalSetup)) {
 Copy-Item $finalSetup $desktopDrop -Force
 Write-Host "Installer ready: $finalSetup" -ForegroundColor Green
 Write-Host "Copied to: $desktopDrop" -ForegroundColor Green
-
